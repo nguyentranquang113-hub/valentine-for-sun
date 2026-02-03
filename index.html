@@ -1,97 +1,81 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>My Valentine 💖</title>
-
+  <meta charset="UTF-8" />
+  <title>Valentine 💖</title>
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
     body {
       margin: 0;
       height: 100vh;
-
-      background-image: url("gen-h-bg1.jpg");
-      background-size: contain;      /* KHÔNG CẮT ẢNH */
-      background-repeat: no-repeat;
-      background-position: center;
+      background: url("gen-h-bg1.jpg") no-repeat center center;
+      background-size: contain; /* KHÔNG BỊ CẮT ẢNH */
       background-color: #000;
-
       display: flex;
-      justify-content: center;
       align-items: center;
-
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-
-      transition: background-image 1s ease;
+      justify-content: center;
     }
 
-    .card {
-      background: rgba(0,0,0,0.4);
-      padding: 40px;
-      border-radius: 20px;
-      max-width: 420px;
+    .box {
+      background: rgba(0,0,0,0.5);
+      padding: 20px 30px;
+      border-radius: 16px;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 20px;
     }
 
     button {
-      margin: 15px;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 30px;
       font-size: 18px;
+      padding: 10px 20px;
+      margin: 8px;
+      border: none;
+      border-radius: 12px;
       cursor: pointer;
-      background: #ff3366;
-      color: white;
     }
 
-    button:hover {
-      background: #ff0033;
+    .yes {
+      background: #ff5c8a;
+      color: #fff;
     }
 
-    #thanks {
-      display: none;
-      font-size: 26px;
-      margin-top: 20px;
+    .no {
+      background: #ffd1dc;
     }
   </style>
 </head>
 
 <body>
-
-  <!-- NHẠC: FOREVER AND EVER, ALWAYS (tự phát khi mở link) -->
-  <iframe
-    id="music"
-    src="https://www.youtube.com/embed/ZJfQ0C3ZqgA?autoplay=1&loop=1&playlist=ZJfQ0C3ZqgA&mute=1"
-    allow="autoplay"
-    style="width:0;height:0;border:0;">
-  </iframe>
-
-  <div class="card">
+  <div class="box" id="content">
     <h1>Can you be my valentine?</h1>
-
-    <div id="buttons">
-      <button onclick="accept()">Yes</button>
-      <button onclick="accept()">Zânggg ạ</button>
-    </div>
-
-    <div id="thanks">Cảm ơn sụn iuu của anh ạ</div>
+    <button class="yes" onclick="choose()">Yes</button>
+    <button class="no" onclick="choose()">Zânggg ạ</button>
   </div>
 
+  <audio id="music">
+    <source src="forever-ever-always.mp3.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
-    function accept() {
-      // đổi nền
-      document.body.style.backgroundImage = "url('gen-h-bg2.jpg')";
+    function choose() {
+      document.body.style.background =
+        "url('gen-h-bg2.jpg') no-repeat center center";
+      document.body.style.backgroundSize = "contain";
+      document.body.style.backgroundColor = "#000";
 
-      // ẩn nút, hiện text
-      document.getElementById("buttons").style.display = "none";
-      document.getElementById("thanks").style.display = "block";
+      document.getElementById("content").innerHTML =
+        "<h1>Cảm ơn sụn iuu của anh ạ 💖</h1>";
 
-      // unmute nhạc sau khi bấm
       const music = document.getElementById("music");
-      music.src = music.src.replace("&mute=1", "&mute=0");
+      music.play();
     }
   </script>
-
 </body>
 </html>
-
