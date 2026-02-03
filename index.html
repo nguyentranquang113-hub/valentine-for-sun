@@ -7,7 +7,8 @@
     body {
       margin: 0;
       height: 100vh;
-      background: url("gen-h-bg1.jpg") center/cover no-repeat;
+     background: url("bg1.jpg") center/contain no-repeat;
+background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,9 +63,8 @@
 
   <script>
     function accept() {
-      document.body.style.background = "url('gen-h-bg2.jpg') center/cover no-repeat";
-      document.getElementById("thanks").style.display = "block";
-    }
+     document.body.style.background = "url('bg2.jpg') center/contain no-repeat";
+document.body.style.backgroundColor = "#000";
 
     function playMusic() {
       const iframe = document.querySelector("iframe");
