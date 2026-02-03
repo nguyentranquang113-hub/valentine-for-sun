@@ -7,20 +7,20 @@
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: url("bg1.jpg") center/cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
+      transition: background 1s ease;
     }
     .card {
-      background: rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.4);
       padding: 40px;
       border-radius: 20px;
       max-width: 420px;
-      z-index: 1;
     }
     button {
       margin: 15px;
@@ -35,40 +35,35 @@
     button:hover {
       background: #ff0033;
     }
-    iframe {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 0;
+    #thanks {
+      display: none;
+      font-size: 26px;
+      margin-top: 20px;
     }
   </style>
 </head>
-<body>
+<body onclick="playMusic()">
 
-  <!-- Nhạc nền YouTube -->
+  <!-- Nhạc nền -->
   <iframe
     src="https://www.youtube.com/embed/4z-rkG4bK6M?autoplay=1&loop=1&playlist=4z-rkG4bK6M&mute=1"
-    allow="autoplay">
+    allow="autoplay"
+    style="width:0;height:0;border:0;">
   </iframe>
 
-  <div class="card" onclick="playMusic()">
+  <div class="card" id="card">
     <h1>💘 Can you be my Valentine? 💘</h1>
 
-    <button onclick="yes()">Yes 💕</button>
-    <button onclick="zang()">Zânggg ạ 🥰</button>
+    <button onclick="accept()">Yes 💕</button>
+    <button onclick="accept()">Zânggg ạ 🥰</button>
 
-    <p style="font-size:14px;opacity:0.8;margin-top:20px;">
-      (chạm vào màn hình để bật nhạc 🎵)
-    </p>
+    <div id="thanks">Cảm ơn sụn iu ạ hehee 💖</div>
   </div>
 
   <script>
-    function yes() {
-      alert("Cảm ơn sụn iu ạ hehee 💖");
-    }
-
-    function zang() {
-      alert("Cảm ơn sụn iu ạ hehee 💖");
+    function accept() {
+      document.body.style.background = "url('bg2.jpg') center/cover no-repeat";
+      document.getElementById("thanks").style.display = "block";
     }
 
     function playMusic() {
