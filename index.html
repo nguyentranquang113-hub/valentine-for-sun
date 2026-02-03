@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.25);
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 420px;
+      z-index: 1;
+    }
+    button {
+      margin: 15px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background: #ff3366;
+      color: white;
+    }
+    button:hover {
+      background: #ff0033;
+    }
+    iframe {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nhạc nền YouTube -->
+  <iframe
+    src="https://www.youtube.com/embed/4z-rkG4bK6M?autoplay=1&loop=1&playlist=4z-rkG4bK6M&mute=1"
+    allow="autoplay">
+  </iframe>
+
+  <div class="card" onclick="playMusic()">
+    <h1>💘 Can you be my Valentine? 💘</h1>
+
+    <button onclick="yes()">Yes 💕</button>
+    <button onclick="zang()">Zânggg ạ 🥰</button>
+
+    <p style="font-size:14px;opacity:0.8;margin-top:20px;">
+      (chạm vào màn hình để bật nhạc 🎵)
+    </p>
+  </div>
+
+  <script>
+    function yes() {
+      alert("Cảm ơn sụn iu ạ hehee 💖");
+    }
+
+    function zang() {
+      alert("Cảm ơn sụn iu ạ hehee 💖");
+    }
+
+    function playMusic() {
+      const iframe = document.querySelector("iframe");
+      iframe.src = iframe.src.replace("mute=1", "mute=0");
+    }
+  </script>
+
+</body>
+</html>
